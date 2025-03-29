@@ -8,6 +8,7 @@ app.use(express.json());
 
 app.post('/analyze', async (req, res) => {
     try {
+        console.log('Received request:', req.body.entries);
         const entriesText = req.body.entries;
         
         const response = await fetch('https://api.openai.com/v1/chat/completions', {
@@ -38,8 +39,10 @@ app.post('/analyze', async (req, res) => {
         }
 
         const data = await response.json();
+        console.log('OpenAI Response:', data);
         res.json({ analysis: data.choices[0].message.content });
     } catch (error) {
+        console.error('Error:', error);
         res.status(500).json({ error: 'Failed to analyze entries' });
     }
 });

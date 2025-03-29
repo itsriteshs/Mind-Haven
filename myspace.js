@@ -77,45 +77,22 @@ getProgressBtn.addEventListener('click', async () => {
         return;
     }
 
-    // Show progress section
-    progressSection.style.display = 'block';
-    progressContent.innerHTML = '<p>Analyzing your entries...</p>';
-    
-    // Scroll to progress section
-    progressSection.scrollIntoView({ behavior: 'smooth' });
-
-    // Prepare entries for analysis - now in chronological order
-    const sortedEntries = [...entries].reverse(); // Reverse to get oldest first
-    const entriesText = sortedEntries.map(entry => {
+    // Prepare entries for analysis
+    const entriesText = entries.map(entry => {
         const date = new Date(entry.date).toLocaleDateString();
         return `Entry from ${date}: ${entry.content}`;
     }).join('\n\n');
 
+    console.log('Sending entries:', entriesText);
+
     try {
-        const analysis = await analyzeProgress(entriesText);
+        // Show loading state
+        progressSection.style.display = 'block';
+        progressContent.innerHTML = 'Analyzing your entries...';
+        
+        // Scroll to progress section
+        progressSection.scrollIntoView({ behavior: 'smooth' });
 
-        progressContent.innerHTML = `
-            <div class="analysis-content">
-                <h3>Your Personal Progress Analysis</h3>
-                <div class="analysis-text">
-                    ${analysis.split('\n').map(para => `<p>${para}</p>`).join('')}
-                </div>
-            </div>
-        `;
-
-    } catch (error) {
-        progressContent.innerHTML = `
-            <div class="error-message">
-                <p>Sorry, there was an error analyzing your entries. Please try again later.</p>
-                <p>Error: ${error.message}</p>
-            </div>
-        `;
-    }
-});
-
-// Replace the existing analyzeProgress function with this:
-async function analyzeProgress(entriesText) {
-    try {
         const response = await fetch('http://localhost:3000/analyze', {
             method: 'POST',
             headers: {
@@ -125,15 +102,22 @@ async function analyzeProgress(entriesText) {
         });
 
         if (!response.ok) {
-            throw new Error('Failed to analyze entries');
+            throw new Error(`HTTP error! status: ${response.status}`);
         }
 
         const data = await response.json();
-        return data.analysis;
+        console.log('Received response:', data);
+
+        if (data.analysis) {
+            progressContent.innerHTML = data.analysis;
+        } else {
+            throw new Error('No analysis received');
+        }
     } catch (error) {
-        throw new Error('Failed to analyze entries');
+        console.error('Error:', error);
+        progressContent.innerHTML = `Error analyzing entries: ${error.message}`;
     }
-}
+});
 
 // Initial display
 displayEntries(); 
