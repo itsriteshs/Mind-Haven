@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MySpace - Mind Haven</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,800;1,800&display=swap" rel="stylesheet">
+    <style>
+        .myspace-container {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: url('assets/images/nature-1959229_1280.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            padding: 90px 40px 40px;
+        }
+
+        .myspace-title {
+            color: white;
+            font-size: 8rem;
+            font-family: Helvetica, sans-serif;
+            margin-bottom: 40px;
+            text-align: center;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .journal-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 800px;
+        }
+
+        .entry-form {
+            margin-bottom: 40px;
+        }
+
+        .entry-form textarea {
+            width: 95%;
+            height: 200px;
+            padding: 15px;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            font-size: 1rem;
+            margin-bottom: 20px;
+            resize: vertical;
+        }
+
+        .entry-form textarea:focus {
+            border-color: #0f9e99;
+            outline: none;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            background-color: #0f9e99;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #0d8a85;
+        }
+
+        .entries-container {
+            margin-top: 40px;
+        }
+
+        .entry {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .entry-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+
+        .entry-content {
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .welcome-message {
+            color: white;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .logout-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background-color: rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+        }
+
+        .logout-btn:hover {
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            margin-top: 20px;
+        }
+
+        .previous-entries-section {
+            margin-top: 75px;
+            padding: 30px 30px 80px 30px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 20px;
+            display: none; /* Initially hidden */
+        }
+
+        .previous-entries-section h2 {
+            color: white;
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .entries-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); 
+            gap: 80px;
+            padding: 20px 0;
+        }
+
+        .entry-card {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s ease;
+            height: 100%; 
+            display: flex;
+            flex-direction: column;
+        }
+
+        .entry-card:hover {
+            transform: translateY(-2px);
+        }
+
+        .entry-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        .entry-content {
+            font-size: 1rem;
+            line-height: 1.6;
+            flex-grow: 1; /* Allow content to fill space */
+        }
+
+        .progress-section {
+            margin-top: 40px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 20px;
+            display: none; /* Initially hidden */
+        }
+
+        .progress-section h2 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 2rem;
+        }
+
+        .progress-content {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            line-height: 1.6;
+            font-size: 1.1rem;
+        }
+
+        .analysis-content {
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .analysis-content h3 {
+            color: #0f9e99;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .analysis-text p {
+            margin-bottom: 15px;
+            line-height: 1.6;
+        }
+
+        .error-message {
+            color: #ff4444;
+            padding: 15px;
+            background: #fff;
+            border-radius: 8px;
+            border-left: 4px solid #ff4444;
+        }
+
+        @media (max-width: 1200px) {
+            .entries-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .entries-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <div class="logo">Mind Haven</div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="#">Buddy</a></li>
+                <li><a href="myspace.html">MySpace</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="myspace-container">
+        <h1 class="myspace-title">MySpace</h1>
+        <div class="welcome-message" id="welcome-message"></div>
+        <a href="#" class="logout-btn" id="logout-btn">Logout</a>
+        
+        <div class="journal-container">
+            <div class="entry-form">
+                <textarea id="new-entry" placeholder="Write your thoughts here..."></textarea>
+                <div class="button-group">
+                    <button class="btn" id="save-entry">Save Entry</button>
+                    <button class="btn" id="get-progress">Get Progress</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="previous-entries-section">
+            <h2>Previous Entries</h2>
+            <div class="entries-grid" id="entries-grid">
+            </div>
+        </div>
+
+        <div class="progress-section" id="progress-section">
+            <h2>Your Progress:</h2>
+            <div class="progress-content" id="progress-content">
+            </div>
+        </div>
+    </div>
+
+    <script src="auth.js"></script>
+    <script src="myspace.js"></script>
+</body>
+</html> 

@@ -1,0 +1,319 @@
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  color: #333;
+  /* color: rgb(239, 233, 224);  */
+  line-height: 1.6;
+  font-family: "Libre Franklin";
+  background-color: rgb(243, 222, 195);
+   /* background-color: rgb(15, 158, 153); */
+}
+
+
+nav {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90%;
+  max-width: 1200px;
+  z-index: 1000;
+}
+
+.navbar {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border-radius: 25px;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+  display: flex;
+  overflow-x: hidden;
+  justify-content: center;
+  align-items: center;
+  background-image: url('assets/images/lake-7316684_1280.jpg');
+  background-size: cover;
+  /* position:fixed; */
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 200px;
+  font-family: Helvetica, sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+
+  font: weight 500px;
+  ;
+  margin: 0;
+  z-index: 2;
+}
+
+.cloud {
+  position: absolute;
+  width: 600px;
+  z-index: 1;
+  transition: transform 0.1s ease-out;
+}
+
+.cloud-top {
+  top: 10%;
+  left: -200px;
+}
+
+.cloud-bottom {
+  bottom: 10%;
+  right: -200px;
+}
+
+.topic-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 30px 40px;
+  min-height: 100vh;
+
+}
+
+.content {
+  /* border:2px solid black; */
+  /* padding: 10px 10px; */
+  max-width: 800px;
+  /* margin: 0 auto; */
+  font-family: "Libre Franklin";
+}
+
+.content h2 {
+
+  font-size: 3.9rem;
+  margin-bottom: 50px;
+
+}
+
+.content p {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+}
+
+
+
+
+.im {
+  /* border: 2px solid green; */
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
+.img1 img {
+  border-radius: 20px;
+  width: 350px;
+  margin-bottom: 50px;
+
+}
+
+.img2 img {
+  border-radius: 20px;
+  width: 350px;
+  margin-top: 100px;
+}
+.img3 img {
+  border-radius: 20px;
+  width: 350px;
+  margin-top: 0px;
+}
+.image-grid {
+  margin-top:20px;
+  display: grid;
+  grid-template-columns: 1fr 1fr; 
+  grid-template-rows: auto auto; 
+  column-gap: 30px; 
+  row-gap: 10px; 
+}
+
+.img1 {
+  grid-column: 1 / 2; 
+  grid-row: 1 / 2; 
+}
+
+.img2 {
+  margin-bottom: 20px;
+  grid-column: 2 / 3;
+  grid-row: 1 / 3; 
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+}
+
+.img3 {
+  margin-top: 20px;
+  grid-column: 1 / 2;
+  grid-row: 2 / 3; 
+}
+
+
+
+.statistics {
+  min-height: 100vh;
+  position: relative;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('assets/images/sunrise-4987384_1280.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+  text-align: center;
+
+}
+.statistics h2 {
+
+  font-size: 3.9rem;
+  margin-bottom: 50px;
+
+}
+table {
+  width: 70%;
+  border-collapse: collapse;
+  margin: 20px 0;
+  font-size: 1.2rem;
+  margin-bottom: 50px;
+  font-weight: bold;
+  font-family: "libre franklin";
+}
+th, td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+th {
+  /* background-color: #f4f4f4; */
+  font-weight: bold;
+}
+.positivity{
+  margin: 30px 40px;
+  
+}
+/* .wall {
+  background-color: #654321;  */
+  /* color: #faebd7; */
+   /* padding: 20px;  */
+/* } */
+
+ .positivity h2 {
+  /* color: #faebd7;  */
+  text-align: right;
+  font-size: 3.9rem;
+  margin-bottom: 50px;
+ }   
+
+.masonry-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); 
+  grid-auto-rows: minmax( 200px,auto); 
+  gap: 10px; 
+  padding: 10px;
+  height: 100vh; 
+  box-sizing: border-box;
+}
+
+.masonry-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 8px; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+}
+
+.masonry-item img {
+  width: 100%; 
+  height: 100%; 
+  object-fit: fill; 
+}
+
+
+.item1 {
+  grid-column: span 1;
+  grid-row: span 3;
+}
+
+.item2 {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.item3 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+.item4 {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+.item6 {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.item7 {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.item8 {
+  grid-column: span 1;
+  grid-row: span 2;
+}
+
+.item9 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+.item10 {
+  grid-column: span 1;
+  grid-row: span 1;
+}
+
+
+
+

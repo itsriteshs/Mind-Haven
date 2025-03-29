@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Mind Haven</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,800;1,800&display=swap" rel="stylesheet">
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        nav {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1200px;
+            z-index: 1000;
+            }
+
+        .navbar {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            border-radius: 25px;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            }
+
+            .logo {
+            color: #fff;
+            font-size: 1.5rem;
+            font-weight: bold;
+            }
+
+            .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            margin: 0;
+            padding: 0;
+            }
+
+            .nav-links li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease;
+            }
+
+            .nav-links li a:hover {
+            color: rgba(255, 255, 255, 0.7);
+            }
+        .about{
+            min-height: 30vh;
+            background-image: url(assets/images/mountains-5842346_1280.jpg);
+            background-size: cover;
+  
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+
+
+        }
+        .about-hero {
+            height: 30vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-image: url('assets/images/mountains-5842346_1280.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .about-hero h1 {
+            color: white;
+            font-size: 4rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .team-section {
+            height: 70vh;
+            padding: 40px 20px;
+            background-color: rgb(243, 222, 195);
+            text-align: center;
+        }
+
+        .team-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 50px;
+            color: #333;
+        }
+
+        .team-members {
+            display: flex;
+            justify-content: space-around;
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .member-card {
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            width: 350px;
+            transition: transform 0.3s ease;
+        }
+
+        .member-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .member-img {
+            width: 300px;
+            height: 300px;
+            border-radius: 10px;
+            margin: 0 auto 20px;
+            overflow: hidden;
+        }
+
+        .member-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .member-card h3 {
+            margin-top: 20px;
+            font-size: 1.8rem;
+            color: #333;
+        }
+
+        .aim-section {
+            min-height: 70vh;
+            padding: 60px 20px;
+            background-color: white;
+            text-align: center;
+        }
+
+        .aim-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .aim-content {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            line-height: 1.8;
+        }
+
+        .contact-mini {
+            min-height: 80vh;
+            padding: 60px 20px;
+            background-image: url('assets/images/nature-6816877_1280.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .contact-mini h2 {
+            color: white;
+            font-size: 3rem;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-form {
+            min-height: 500px;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        .form-group label {
+            display: block;
+            color: white;
+            font-weight: 500;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 90%;
+            padding: 12px;
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            color: white;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+
+        .form-group textarea {
+            height: 100px;
+            min-height: 100px;
+            max-height: 200px;
+            resize: vertical;
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+
+        .submit-btn {
+            width: 96%;
+            padding: 14px;
+            background-color: #0f9e99;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin-top: 10px;
+        }
+
+        .submit-btn:hover {
+            background-color: #0d8a85;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <div class="logo">Mind Haven</div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="#">Buddy</a></li>
+                <li><a href="myspace.html">MySpace</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="about-hero">
+        <h1>About Us</h1>
+    </section>
+
+    <section class="team-section">
+        <h2>Team Members</h2>
+        <div class="team-members">
+            <div class="member-card">
+                <div class="member-img">
+                    <img src="path/to/ojas-image.jpg" alt="Ojas Joshi">
+                </div>
+                <h3>Ojas Joshi</h3>
+            </div>
+            <div class="member-card">
+                <div class="member-img">
+                    <img src="assets/images/a0cd6505-fc28-4b49-976a-d42e9862c030.jpg" alt="Ritesh">
+                </div>
+                <h3>Ritesh</h3>
+            </div>
+            <div class="member-card">
+                <div class="member-img">
+                    <img src="path/to/kartik-image.jpg" alt="Kartik Raja">
+                </div>
+                <h3>Kartik Raja</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="aim-section">
+        <h2>Aim of our Project</h2>
+        <div class="aim-content">
+            <p>Mind Haven is a comprehensive mental health platform designed to provide support and resources to individuals seeking emotional well-being. Our project integrates several key features:</p>
+            <br>
+            <p>The MySpace journaling feature allows users to document their thoughts and feelings, providing a safe space for self-expression. Our innovative progress tracking system uses AI to analyze journal entries and provide personalized insights about mental health progression.</p>
+            <br>
+            <p>We've created an intuitive interface that makes mental health resources accessible to everyone. The platform includes educational content, statistics, and a wall of positivity to inspire and encourage our users.</p>
+            <br>
+            <p>Our goal is to reduce the stigma around mental health while providing practical tools for emotional well-being. Through technology and compassion, we aim to create a haven where everyone can find support and understanding.</p>
+        </div>
+    </section>
+
+    <section class="contact-mini">
+        <h2>Reach out to us!</h2>
+        <div class="contact-form">
+            <form id="contact-form">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input 
+                        type="text" 
+                        id="name" 
+                        name="name" 
+                        placeholder="Enter your name"
+                        required
+                    >
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input 
+                        type="email" 
+                        id="email" 
+                        name="email" 
+                        placeholder="Enter your email"
+                        required
+                    >
+                </div>
+                <div class="form-group">
+                    <label for="reason">Reason for Contact</label>
+                    <textarea 
+                        id="reason" 
+                        name="reason" 
+                        placeholder="Tell us why you're reaching out..."
+                        required
+                    ></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <script src="script.js"></script>
+</body>
+</html>
