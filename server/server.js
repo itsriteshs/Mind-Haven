@@ -26,7 +26,7 @@ app.post('/analyze', async (req, res) => {
                     },
                     {
                         role: "user",
-                        content: `Here are the journal entries in chronological order from oldest to newest. Please analyze the progression and provide direct, personal feedback:\n\n${entriesText}`
+                        content: `Here are the journal entries in chronological order from oldest to newest. Please analyze the progression from the oldest and move on to newest and provide direct, personal feedback:\n\n${entriesText}`
                     }
                 ],
                 temperature: 0.7,

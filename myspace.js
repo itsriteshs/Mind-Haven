@@ -77,8 +77,9 @@ getProgressBtn.addEventListener('click', async () => {
         return;
     }
 
-    // Prepare entries for analysis
-    const entriesText = entries.map(entry => {
+    // Prepare entries for analysis - reverse them to get oldest first
+    const chronologicalEntries = [...entries].reverse();
+    const entriesText = chronologicalEntries.map(entry => {
         const date = new Date(entry.date).toLocaleDateString();
         return `Entry from ${date}: ${entry.content}`;
     }).join('\n\n');
