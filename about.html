@@ -79,10 +79,11 @@
             background-position: center;
             background-attachment: fixed;
         }
+        
 
         .about-hero h1 {
             color: white;
-            font-size: 4rem;
+            font-size: 5rem;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
 
@@ -94,8 +95,9 @@
         }
 
         .team-section h2 {
-            font-size: 2.5rem;
+            font-size: 4rem;
             margin-bottom: 50px;
+            /* margin-left: ; */
             color: #333;
         }
 
@@ -109,21 +111,22 @@
         }
 
         .member-card {
-            background: white;
+            /* background: white; */
             padding: 30px;
             border-radius: 20px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            /* box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); */
             width: 350px;
             transition: transform 0.3s ease;
         }
 
         .member-card:hover {
             transform: translateY(-10px);
+             box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
 
         .member-img {
             width: 300px;
-            height: 300px;
+            height: 360px;
             border-radius: 10px;
             margin: 0 auto 20px;
             overflow: hidden;
@@ -137,6 +140,7 @@
 
         .member-card h3 {
             margin-top: 20px;
+            /* margin-left: 50px; */
             font-size: 1.8rem;
             color: #333;
         }
@@ -145,20 +149,41 @@
             min-height: 70vh;
             padding: 60px 20px;
             background-color: white;
-            text-align: center;
+            /* display:flex; */
+            /* text-align: center; */
+        }
+        .aim-flex{
+            display: flex;
+            justify-content: center;
+            gap:50px;
         }
 
         .aim-section h2 {
-            font-size: 2.5rem;
+            font-size: 3.5rem;
             margin-bottom: 40px;
+            margin-left: 60px;
             color: #333;
         }
 
         .aim-content {
             max-width: 800px;
-            margin: 0 auto;
+            /* margin: 0 auto; */
             font-size: 1.2rem;
             line-height: 1.8;
+        }
+        .aim-image img{
+            height: 50vh;
+            width: 40vw;
+            border-radius: 10px;
+            transition: transform 0.3s ease;
+
+        }
+        .aim-image img:hover{
+            height: 50vh;
+            width: 40vw;
+            border-radius: 10px;
+            transform: translateY(-10px);
+
         }
 
         .contact-mini {
@@ -269,7 +294,7 @@
         </div>
     </nav>
 
-    <section class="about-hero">
+    <section class="about-hero ">
         <h1>About Us</h1>
     </section>
 
@@ -278,7 +303,7 @@
         <div class="team-members">
             <div class="member-card">
                 <div class="member-img">
-                    <img src="path/to/ojas-image.jpg" alt="Ojas Joshi">
+                    <img src="assets/images/WhatsApp Image 2025-03-30 at 19.07.06.jpeg" alt="Ojas Joshi">
                 </div>
                 <h3>Ojas Joshi</h3>
             </div>
@@ -290,7 +315,7 @@
             </div>
             <div class="member-card">
                 <div class="member-img">
-                    <img src="path/to/kartik-image.jpg" alt="Kartik Raja">
+                    <img src="assets/images/WhatsApp Image 2025-03-30 at 19.06.58.jpeg" alt="Kartik Raja">
                 </div>
                 <h3>Kartik Raja</h3>
             </div>
@@ -299,14 +324,20 @@
 
     <section class="aim-section">
         <h2>Aim of our Project</h2>
-        <div class="aim-content">
-            <p>Mind Haven is a comprehensive mental health platform designed to provide support and resources to individuals seeking emotional well-being. Our project integrates several key features:</p>
-            <br>
-            <p>The MySpace journaling feature allows users to document their thoughts and feelings, providing a safe space for self-expression. Our innovative progress tracking system uses AI to analyze journal entries and provide personalized insights about mental health progression.</p>
-            <br>
-            <p>We've created an intuitive interface that makes mental health resources accessible to everyone. The platform includes educational content, statistics, and a wall of positivity to inspire and encourage our users.</p>
-            <br>
-            <p>Our goal is to reduce the stigma around mental health while providing practical tools for emotional well-being. Through technology and compassion, we aim to create a haven where everyone can find support and understanding.</p>
+        <div class="aim-flex">
+            <div class="aim-content">
+                <p>Mind Haven is a comprehensive mental health platform designed to provide support and resources to individuals seeking emotional well-being. Our project integrates several key features:</p>
+                <br>
+                <p>The MySpace journaling feature allows users to document their thoughts and feelings, providing a safe space for self-expression. Our innovative progress tracking system uses AI to analyze journal entries and provide personalized insights about mental health progression.</p>
+                <br>
+                <p>We've created an intuitive interface that makes mental health resources accessible to everyone. The platform includes educational content, statistics, and a wall of positivity to inspire and encourage our users.</p>
+                <br>
+                <p>Our goal is to reduce the stigma around mental health while providing practical tools for emotional well-being. Through technology and compassion, we aim to create a haven where everyone can find support and understanding.</p>
+            </div>
+            <div class="aim-image">
+                <img src="assets/images/psychologist-6008048_1280.jpg" alt="">
+
+            </div>
         </div>
     </section>
 
