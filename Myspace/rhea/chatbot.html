@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat with Rhea - My Space</title>
+    
+    <link rel="stylesheet" href="../style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Nunito:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body class="chatbot-page"> 
+
+    
+    <header class="site-header chatbot-header">
+        
+        <a href="../index.html" class="back-button" aria-label="Back to My Space Home">
+            <!-- back arrow svg -->
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                <path fill-rule="evenodd" d="M11.03 3.97a.75.75 0 010 1.06l-6.22 6.22H21a.75.75 0 010 1.5H4.81l6.22 6.22a.75.75 0 11-1.06 1.06l-7.5-7.5a.75.75 0 010-1.06l7.5-7.5a.75.75 0 011.06 0z" clip-rule="evenodd" />
+            </svg>
+        </a>
+
+        
+        <h1 class="chatbot-name" id="chatbotName">Rhea</h1>
+
+        
+         <a href="../index.html" class="logo-link" aria-label="My Space Home">
+            <!-- Logo svg -->
+            <svg width="150" height="45" viewBox="0 0 210 60" xmlns="http://www.w3.org/2000/svg" class="logo">
+                
+                <defs> <style> .my-space-text-logo { font-family: 'Inter', sans-serif; font-size: 24px; fill: var(--text-primary-on-header, #333D4B); font-weight: 400; } .space-text-logo { letter-spacing: 0.5px; } .enclosure-shape-logo { fill: none; stroke: var(--logo-accent-light, #E2E8F0); stroke-width: 2px; } .individual-dot-logo { fill: var(--logo-accent-soft, #A0AEC0); } </style> </defs>
+                 <path class="enclosure-shape-logo" d="M 185 10 A 5 5 0 0 1 190 15 V 45 A 5 5 0 0 1 185 50 H 25 A 5 5 0 0 1 20 45 V 30" />
+                 <path class="enclosure-shape-logo" d="M 50 10 H 185 A 5 5 0 0 1 190 15" />
+                <circle class="individual-dot-logo" cx="35" cy="33" r="5"/>
+                <text x="55" y="40" class="my-space-text-logo">My</text>
+                <text x="100" y="40" class="my-space-text-logo space-text-logo">Space</text>
+            </svg>
+        </a>
+    </header>
+
+    <!-- main chat area contianer -->
+    <main class="chat-container">
+        <!-- scrollable mesages -->
+        <div class="chat-messages" id="chatMessages">
+            
+            <div class="message ai-message initial-message">
+                 
+                <div class="avatar ai-avatar">R</div> 
+                
+                <div class="message-inner-wrapper">
+                    
+                    <div class="message-content">
+                        <p>Hi, I'm Rhea here to help. Ready when you are </p> 
+                    </div>
+                    
+                    <div class="message-meta">
+                        <span class="timestamp"></span> 
+                        <button class="copy-btn" aria-label="Copy message">
+                             
+                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path d="M7 3.5A1.5 1.5 0 018.5 2h3.879a1.5 1.5 0 011.06.44l3.122 3.121A1.5 1.5 0 0117 6.621V16.5a1.5 1.5 0 01-1.5 1.5h-7A1.5 1.5 0 017 16.5v-13z"></path><path d="M4.5 6A1.5 1.5 0 003 7.5v9A1.5 1.5 0 004.5 18h7a1.5 1.5 0 001.5-1.5v-1.121A3.001 3.001 0 0111.879 15H8.5A1.5 1.5 0 017 13.5V9.621a3 3 0 01-1.44-1.06L4.5 7.5V6z"></path></svg>
+                             
+                             <svg class="check-icon" style="display: none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" width="14" height="14"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd" /></svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+
+        <!-- typing effect -->
+        <div class="typing-indicator-area" id="typingIndicatorArea">
+             
+             <div class="message ai-message typing-indicator">
+                 <div class="avatar ai-avatar">R</div>
+                 <div class="message-inner-wrapper">
+                     <div class="message-content">
+                        <!-- typing dots -->
+                        <div class="typing-dots">
+                            <span></span><span></span><span></span>
+                        </div>
+                     </div>
+                 </div>
+            </div>
+        </div>
+
+        <!-- chat input footer -->
+        <footer class="chat-input-area">
+            <!-- textarea-user input -->
+            <textarea id="userInput" placeholder="Share your thoughts..." rows="1" aria-label="Chat message input"></textarea>
+            <!-- send button -->
+            <button id="sendButton" aria-label="Send Message" disabled> 
+                <!-- send svg -->
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M3.478 2.405a.75.75 0 00-.926.94l2.432 7.905H13.5a.75.75 0 010 1.5H4.984l-2.432 7.905a.75.75 0 00.926.94 60.519 60.519 0 0018.445-8.986.75.75 0 000-1.218A60.517 60.517 0 003.478 2.405z" />
+                </svg>
+            </button>
+        </footer>
+    </main>
+
+    
+    <script src="chatbot.js"></script>
+</body>
+</html>

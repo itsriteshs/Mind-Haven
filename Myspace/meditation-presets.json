@@ -1,0 +1,76 @@
+[
+  {
+    "id": "mindful-breath-5",
+    "title": "Mindful Breath",
+    "description": "Center yourself with focus on the breath.",
+    "duration": 300,
+    "audioSrc": "assets/audio/mindful-breath-5.mp3",
+    "visualizerType": "pulse",
+    "themeColor": "blue",
+    "steps": [
+      { "time": 0, "instruction": "Find a comfortable posture, sitting tall or lying down." },
+      { "time": 10, "instruction": "Gently close your eyes or soften your gaze." },
+      { "time": 25, "instruction": "Bring your awareness to the sensation of your breath." },
+      { "time": 45, "instruction": "Notice where you feel the breath most clearly... nose, chest, or belly." },
+      { "time": 70, "instruction": "Follow the natural rhythm, without trying to change it." },
+      { "time": 100, "instruction": "Inhale... Exhale..." },
+      { "time": 130, "instruction": "If your mind wanders, gently guide it back to the breath." },
+      { "time": 170, "instruction": "Just observing the rise and fall." },
+      { "time": 210, "instruction": "Feeling the body soften with each exhale." },
+      { "time": 240, "instruction": "Stay present with this simple anchor." },
+      { "time": 275, "instruction": "Begin to deepen your breath slightly." },
+      { "time": 290, "instruction": "Gently bring awareness back to the room. Session complete." }
+    ]
+  },
+  {
+    "id": "body-scan-7",
+    "title": "Body Scan",
+    "description": "Connect with physical sensations throughout your body.",
+    "duration": 420,
+    "audioSrc": "assets/audio/body-scan-7.mp3",
+    "visualizerType": "rings",
+    "themeColor": "green",
+    "steps": [
+      { "time": 0, "instruction": "Settle into a relaxed position, letting your body feel supported." },
+      { "time": 15, "instruction": "Take a few slow, deep breaths." },
+      { "time": 40, "instruction": "Bring your attention to the toes on your left foot." },
+      { "time": 65, "instruction": "Notice any sensations... warmth, coolness, tingling, or maybe nothing at all." },
+      { "time": 90, "instruction": "Move awareness up your left leg... ankle, calf, knee, thigh." },
+      { "time": 130, "instruction": "Now bring attention to your right foot and leg, scanning slowly." },
+      { "time": 180, "instruction": "Notice sensations in your hips and pelvic area." },
+      { "time": 210, "instruction": "Scan awareness up your torso... belly, chest, back." },
+      { "time": 250, "instruction": "Bring attention to your hands and arms, fingers to shoulders." },
+      { "time": 290, "instruction": "Notice sensations in your neck and throat." },
+      { "time": 320, "instruction": "Scan your face... jaw, cheeks, eyes, forehead." },
+      { "time": 350, "instruction": "Feel the whole body breathing, alive with sensation." },
+      { "time": 390, "instruction": "Rest in this full-body awareness." },
+      { "time": 410, "instruction": "Gently wiggle fingers and toes. Return when ready." }
+    ]
+  },
+  {
+    "id": "loving-kindness-6",
+    "title": "Loving-Kindness",
+    "description": "Cultivate feelings of warmth and compassion.",
+    "duration": 360,
+    "audioSrc": "assets/audio/loving-kindness-6.mp3",
+    "visualizerType": "gentle-wave",
+    "themeColor": "pink",
+    "steps": [
+      { "time": 0, "instruction": "Find a comfortable seat, allowing your heart space to feel open." },
+      { "time": 15, "instruction": "Bring someone to mind who is easy to care about." },
+      { "time": 35, "instruction": "Silently repeat: May you be filled with loving-kindness." },
+      { "time": 60, "instruction": "May you be well in body and mind." },
+      { "time": 85, "instruction": "May you be safe and protected from harm." },
+      { "time": 110, "instruction": "May you be peaceful and at ease." },
+      { "time": 140, "instruction": "Now, offer these same wishes to yourself." },
+      { "time": 160, "instruction": "May I be filled with loving-kindness." },
+      { "time": 185, "instruction": "May I be well in body and mind." },
+      { "time": 210, "instruction": "May I be safe and protected from harm." },
+      { "time": 235, "instruction": "May I be peaceful and at ease." },
+      { "time": 265, "instruction": "Extend these wishes outwards to all beings everywhere." },
+      { "time": 300, "instruction": "May all beings be filled with loving-kindness." },
+      { "time": 330, "instruction": "May all beings be peaceful and at ease." },
+      { "time": 350, "instruction": "Carry this warmth with you. Session ending." }
+    ]
+  }
+]

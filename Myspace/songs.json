@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Forest Ambience",
+    "artist": "Nature Sounds",
+    "src": "assets/music/forest.mp3",
+    "imageSrc": "assets/images/forest.png"
+  },
+  {
+    "title": "Hazaaron Khwaishein Aisi",
+    "artist": "Jagjit Singh",
+    "src": "assets/music/hka.mp3",
+    "imageSrc": "assets/images/hka.png"
+  },
+  {
+    "title": "Haryane Ka Jaat",
+    "artist": "Raju Punjabi",
+    "src": "assets/music/HKJ.mp3",
+    "imageSrc": "assets/images/HKJ.png"
+  },
+  {
+    "title": "Songbird",
+    "artist": "Kenny G",
+    "src": "assets/music/kg.mp3",
+    "imageSrc": "assets/images/kg.png"
+  },
+  {
+    "title": "Mass title song",
+    "artist": "Mano",
+    "src": "assets/music/mass.mp3",
+    "imageSrc": "assets/images/mass.png"
+  },
+  {
+    "title": "Wind Down",
+    "artist": "Evening Sounds",
+    "src": "assets/music/wn.mp3",
+    "imageSrc": "assets/images/wn.png"
+  }
+]

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meditate - My Space</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Nunito:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body class="meditation-page">
+
+    <header class="site-header meditation-header">
+        <a href="index.html" class="back-button" aria-label="Back to My Space Home">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                <path fill-rule="evenodd" d="M11.03 3.97a.75.75 0 010 1.06l-6.22 6.22H21a.75.75 0 010 1.5H4.81l6.22 6.22a.75.75 0 11-1.06 1.06l-7.5-7.5a.75.75 0 010-1.06l7.5-7.5a.75.75 0 011.06 0z" clip-rule="evenodd"></path>
+            </svg>
+        </a>
+        <h1 class="page-title">Choose Your Calm</h1>
+        <div class="header-placeholder"></div>
+    </header>
+
+    <main class="meditation-container">
+
+        <section id="presetSelection" class="preset-selection-view view-active">
+            <p class="selection-prompt">Select a session to begin your practice.</p>
+            <div class="preset-grid" id="presetGrid">
+                <div class="preset-card-placeholder"></div>
+                <div class="preset-card-placeholder"></div>
+                <div class="preset-card-placeholder"></div>
+            </div>
+            <button id="startMeditationBtn" class="start-meditation-btn" disabled>Begin Session</button>
+        </section>
+
+        <section id="activeMeditation" class="active-meditation-view">
+            <div class="meditation-background-gradient"></div>
+
+            <div class="meditation-content">
+                <div class="timer-visualizer-area">
+                    <svg class="timer-svg" viewBox="0 0 100 100">
+                        <circle class="timer-track" cx="50" cy="50" r="45"></circle>
+                        <circle class="timer-progress" id="timerProgressCircle" cx="50" cy="50" r="45" pathLength="100"></circle>
+                    </svg>
+                    <div class="timer-text" id="timerText">00:00</div>
+                    <div class="visualizer" id="meditationVisualizer"></div>
+                </div>
+
+                <div class="instruction-area">
+                    <p id="instructionText">Starting soon...</p>
+                </div>
+
+                <div class="active-controls">
+                    <button id="activePlayPauseBtn" class="control-button play-pause-button" aria-label="Pause">
+                        <svg class="pause-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+                            <path d="M5.25 6.375a.75.75 0 01.75-.75h3a.75.75 0 01.75.75v11.25a.75.75 0 01-.75.75h-3a.75.75 0 01-.75-.75V6.375zm9 0a.75.75 0 01.75-.75h3a.75.75 0 01.75.75v11.25a.75.75 0 01-.75.75h-3a.75.75 0 01-.75-.75V6.375z"></path>
+                        </svg>
+                        <svg class="play-icon" style="display: none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="28" height="28">
+                            <path d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.286L7.28 20.99c-1.25.687-2.779-.217-2.779-1.643V5.653z"></path>
+                        </svg>
+                    </button>
+                    <button id="stopMeditationBtn" class="control-button stop-button" aria-label="Stop Session">
+                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                            <path fill-rule="evenodd" d="M4.5 7.5a3 3 0 013-3h9a3 3 0 013 3v9a3 3 0 01-3 3h-9a3 3 0 01-3-3v-9z" clip-rule="evenodd"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <audio id="meditationAudio" style="display: none;"></audio>
+
+    </main>
+
+    <script src="meditation.js"></script>
+</body>
+</html>

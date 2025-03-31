@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player - My Space</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Nunito:wght@400;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+</head>
+<body class="music-player-page">
+
+    <header class="site-header music-header">
+        <a href="index.html" class="back-button" aria-label="Back to My Space Home">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
+                <path fill-rule="evenodd" d="M11.03 3.97a.75.75 0 010 1.06l-6.22 6.22H21a.75.75 0 010 1.5H4.81l6.22 6.22a.75.75 0 11-1.06 1.06l-7.5-7.5a.75.75 0 010-1.06l7.5-7.5a.75.75 0 011.06 0z" clip-rule="evenodd"/>
+            </svg>
+        </a>
+        <h1 class="page-title">Music Player</h1>
+        <a href="index.html" class="logo-link" aria-label="My Space Home">
+            <svg width="150" height="45" viewBox="0 0 210 60" xmlns="http://www.w3.org/2000/svg" class="logo">
+                <defs> 
+                    <style> 
+                        .my-space-text-logo { font-family: 'Inter', sans-serif; font-size: 24px; fill: var(--text-primary-on-header, #333D4B); font-weight: 400; } 
+                        .space-text-logo { letter-spacing: 0.5px; } 
+                        .enclosure-shape-logo { fill: none; stroke: var(--logo-accent-light, #E2E8F0); stroke-width: 2px; } 
+                        .individual-dot-logo { fill: var(--logo-accent-soft, #A0AEC0); } 
+                    </style> 
+                </defs>
+                <path class="enclosure-shape-logo" d="M 185 10 A 5 5 0 0 1 190 15 V 45 A 5 5 0 0 1 185 50 H 25 A 5 5 0 0 1 20 45 V 30" />
+                <path class="enclosure-shape-logo" d="M 50 10 H 185 A 5 5 0 0 1 190 15" />
+                <circle class="individual-dot-logo" cx="35" cy="33" r="5"/>
+                <text x="55" y="40" class="my-space-text-logo">My</text>
+                <text x="100" y="40" class="my-space-text-logo space-text-logo">Space</text>
+            </svg>
+        </a>
+    </header>
+
+    <main class="player-container">
+        <audio id="audio" src=""></audio>
+        <div class="album-art-container">
+            <img src="assets/images/default-cover.png" alt="Album Art" id="albumArt" class="album-art">
+            <div class="equalizer-container" id="equalizer">
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+                <div class="eq-bar"></div>
+            </div>
+        </div>
+        <div class="song-info">
+            <h2 id="songTitle">Track Title</h2>
+            <p id="songArtist">Artist Name</p>
+        </div>
+        <div class="progress-container" id="progressContainer">
+            <div class="progress-bar" id="progressBar"></div>
+            <input type="range" id="progressSlider" class="progress-slider" value="0" step="0.1" min="0" max="100">
+        </div>
+        <div class="time-container">
+            <span id="currentTime">0:00</span>
+            <span id="totalDuration">0:00</span>
+        </div>
+        <div class="controls-container">
+            <button id="prevButton" class="control-button" aria-label="Previous Track">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M5.25 4.5a.75.75 0 00-.75.75v13.5a.75.75 0 001.5 0V5.25a.75.75 0 00-.75-.75zM9 6.311c-.46-.243-.995.018-.995.53v10.318c0 .512.535.774.995.53l8.25-4.87a.75.75 0 000-1.318l-8.25-4.87z"/>
+                </svg>
+            </button>
+            <button id="playPauseButton" class="control-button play-pause-button" aria-label="Play">
+                <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M4.5 5.653c0-1.426 1.529-2.33 2.779-1.643l11.54 6.348c1.295.712 1.295 2.573 0 3.286L7.28 20.99c-1.25.687-2.779-.217-2.779-1.643V5.653z"/>
+                </svg>
+                <svg class="pause-icon" style="display: none;" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M5.25 6.375a.75.75 0 01.75-.75h3a.75.75 0 01.75.75v11.25a.75.75 0 01-.75.75h-3a.75.75 0 01-.75-.75V6.375zm9 0a.75.75 0 01.75-.75h3a.75.75 0 01.75.75v11.25a.75.75 0 01-.75.75h-3a.75.75 0 01-.75-.75V6.375z"/>
+                </svg>
+            </button>
+            <button id="nextButton" class="control-button" aria-label="Next Track">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M18.75 4.5a.75.75 0 01.75.75v13.5a.75.75 0 01-1.5 0V5.25a.75.75 0 01.75-.75zm-9 1.811c.46-.243.995.018.995.53v10.318c0 .512-.535.774-.995.53l-8.25-4.87a.75.75 0 010-1.318l8.25-4.87z"/>
+                </svg>
+            </button>
+        </div>
+    </main>
+
+    <script src="music.js"></script>
+</body>
+</html>
